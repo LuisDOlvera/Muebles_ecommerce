@@ -1,0 +1,80 @@
+
+/* Snippet para la propiedad box-sizing: border-box 
+se aplique en todo el documento. */
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Globales */
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.nombre-sitio {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.contenedor-navegacion {
+    border-top: 1px solid #e1e1e1; /* Color Gris */
+}
+    
+.nav-principal {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero {
+    background-image: url(../Img/principal.jpg);
+    height: 550px;
+}
+
+/* Categorias */
+
+.categorias h2 {
+    text-align: center;
+}
+
+.categoria a {
+    text-align: center;
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+}
+.categoria a:hover {
+    background-color: #037bc0;
+    color: #FFFFFF;
+    border-bottom-right-radius: 10px;
+
+}
+
+.listado-categorias {
+    display: grid;
+    /* grid-template-columns: 200px 200px 200px 200px; */
+    /* lo mismo de arriba pero abreviado: */
+    /* grid-template-columns: repeat(4, 200px); */
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Bloque Nosotros */
+
+.sobre-nosotros {
+    background-image: linear-gradient( to right, black 50%, red 100% );
+}
