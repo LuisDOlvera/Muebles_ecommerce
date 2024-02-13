@@ -2,7 +2,8 @@
 se aplique en todo el documento. */
 
 html {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Cuando agregamos padding no modifica el tamaño del elemento */
+  font-size: 62.5%; /* 1REM = 10Px */
 }
 *,
 *:before,
@@ -12,6 +13,8 @@ html {
 
 body {
   font-family: "Raleway", sans-serif;
+  font-size: 1.6rem;
+  line-height: 2; /* Interlineado */
 }
 
 /* Globales */
@@ -20,6 +23,19 @@ h1,
 h2,
 h3 {
   font-family: "Playfair Display", serif;
+  margin: 0 0 5rem 0; /* Elimina margen en todos los headings */
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
 }
 
 a {
@@ -27,18 +43,17 @@ a {
   color: #000;
 }
 .contenedor {
-  max-width: 1200px;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
 img {
-  max-width: 100%;
+  max-width: 100%; /* la imagen se ajusta al 100% del espacio disponible*/
   display: block; /* Elimina el pequeño espacio debajo de las imágenes */
 }
 
 .nombre-sitio {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 5rem;
   text-align: center;
 }
 
@@ -47,17 +62,24 @@ img {
 }
 
 .nav-principal {
-  padding: 20px 0;
+  padding: 2rem 0;
   display: flex;
   justify-content: space-between;
 }
 
 .hero {
   background-image: url(../Img/principal.jpg);
-  height: 550px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 55rem;
 }
 
 /* Categorias */
+
+.categorias {
+  padding-top: 5rem;
+}
 
 .categorias h2 {
   text-align: center;
@@ -65,14 +87,14 @@ img {
 
 .categoria a {
   text-align: center;
-  display: block;
-  padding: 20px;
-  font-size: 20px;
+  display: block; /*Para que ocupe todo el espacio disponible*/
+  padding: 2rem;
+  font-size: 2rem;
 }
 .categoria a:hover {
   background-color: #037bc0;
   color: #ffffff;
-  border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 1rem;
 }
 
 .listado-categorias {
@@ -80,12 +102,36 @@ img {
   /* grid-template-columns: 200px 200px 200px 200px; */
   /* A continuación, lo mismo de arriba pero abreviado: */
   /* grid-template-columns: repeat(4, 200px); */
-  grid-template-columns: repeat(3, 1fr); /* tres columnas, una fracción c/u */
-  gap: 20px;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* tres columnas, una fracción de c/u */
+  gap: 2rem;
 }
 
 /* Bloque Nosotros */
 
 .sobre-nosotros {
-  background-image: linear-gradient(to right, black 50%, red 100%);
+  background-image: linear-gradient(
+      to right,
+      transparent 50%,
+      #037bc0 50%,
+      #037bc0 100%
+    ),
+    url(../Img/nosotros.jpg);
+  background-position: left center;
+  padding: 10rem 0;
+  background-repeat: no-repeat;
+  background-size: 100%, 120rem;
+}
+
+.sobre-nosotros-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 8rem;
+}
+
+.texto-nosotros {
+  grid-column: 2 / 3;
+  color: #ffffff;
 }
